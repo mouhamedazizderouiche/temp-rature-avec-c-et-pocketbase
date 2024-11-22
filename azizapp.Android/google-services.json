@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "233497361272",
+    "project_id": "azizapp-ee35d",
+    "storage_bucket": "azizapp-ee35d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:233497361272:android:333bfcf974a214428b268d",
+        "android_client_info": {
+          "package_name": "com.companyname.azizapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuOzQ5mGAbHZ2IhblqnoncWLeuxESy1U8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

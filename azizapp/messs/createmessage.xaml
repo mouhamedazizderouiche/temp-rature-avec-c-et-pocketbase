@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="azizapp.messs.createmessage"
+             NavigationPage.HasBackButton="True"
+             NavigationPage.IconColor="Black"
+             >
+    <NavigationPage.TitleView>
+
+        <StackLayout Orientation="Horizontal" BackgroundColor="Transparent" >
+            <Label Text="Liste utilisateur" TextColor="Black" HorizontalOptions="Start" Margin="0,8,0,0" FontSize="Title" />
+            <ImageButton x:Name="filterButton" BackgroundColor="Transparent" Margin="80,15,0,10" Source="filter.png" HeightRequest="20" WidthRequest="20" Clicked="OnFilterButtonClicked" HorizontalOptions="End" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+
+        <StackLayout>
+            <SearchBar x:Name="searchBar" Placeholder="Rechercher un utilisateur..." TextChanged="HandleSearch" />
+
+            <Frame x:Name="dropDownFrame" IsVisible="False" BackgroundColor="#000000" Padding="5" CornerRadius="25" HasShadow="True" Margin="200,50,20,0" TranslationY="-30" Opacity="0">
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Filtrer avec Post:" TextColor="White" Margin="5,0,0,0" FontSize="16"/>
+                    <Button Text="Maintenance" Clicked="OnMaintenanceButtonClicked" BackgroundColor="Transparent" TextColor="White" CornerRadius="25" Margin="5,5,0,0" WidthRequest="160" HeightRequest="40" />
+                    <Button Text="Laboratoire" Clicked="OnLaboButtonClicked" BackgroundColor="Transparent" TextColor="White" CornerRadius="25" Margin="0,5,0,0" WidthRequest="160" HeightRequest="40" />
+                </StackLayout>
+            </Frame>
+
+            <ListView x:Name="userListView" Margin="0,0,0,0" SeparatorVisibility="None"  ItemSelected="OnUserSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="20">
+                                
+                                <Label Text="{Binding Nom}" TextColor="{Binding TextColor}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

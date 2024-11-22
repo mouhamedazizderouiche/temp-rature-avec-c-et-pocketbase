@@ -1,0 +1,42 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="azizapp.profil.ModifieAccount"
+             Title="Modifier le compte"
+             NavigationPage.HasNavigationBar="True"
+             NavigationPage.HasBackButton="True"
+              NavigationPage.IconColor="Black"
+            >
+
+    <StackLayout Padding="20">
+        <Label Text="Nouvel email :" TextColor="Black" FontAttributes="Bold" FontSize="18"/>
+        <Entry x:Name="emailEntry" Placeholder="Nouvel email" />
+
+        <Label Text="Nouveau nom:" TextColor="Black" FontAttributes="Bold" FontSize="18"/>
+        <Entry x:Name="nomEntry" Placeholder="Nouveau nom" />
+
+        <Label Text="Ancien mot de passe:" TextColor="Black" FontAttributes="Bold" FontSize="18"/>
+        <Entry x:Name="ancienPasswordEntry" Placeholder="Ancien mot de passe" IsPassword="True" />
+
+        <Label Text="Nouveau mot de passe:" TextColor="Black" FontAttributes="Bold" FontSize="18"/>
+        <Entry x:Name="nouveauPasswordEntry" Placeholder="Nouveau mot de passe" IsPassword="True" />
+
+        <Label Text="Confirmer le nouveau mot de passe:" TextColor="Black" FontAttributes="Bold" FontSize="18"/>
+        <Entry x:Name="confirmerPasswordEntry" Placeholder="Confirmer le nouveau mot de passe" IsPassword="True" />
+
+        <Button Text="Enregistrer les modifications" Clicked="OnSubmitButtonClicked"  
+                TextColor="White" FontAttributes="Bold" FontSize="15"
+                Margin="20,30,20,0" BackgroundColor="Black"
+                />
+    </StackLayout>
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+
+            <Label Text="Modifie Compte" 
+       TextColor="Black"
+       FontSize="22"
+       FontAttributes="Bold"
+       VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+</ContentPage>

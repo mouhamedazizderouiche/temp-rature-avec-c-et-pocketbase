@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="azizapp.home.allNotificatoin"
+             NavigationPage.HasBackButton="True"
+             NavigationPage.IconColor="Black">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Log de température" 
+                   VerticalOptions="Start" 
+                   TextColor="Red"
+                   HorizontalOptions="CenterAndExpand" 
+                   FontSize="Large" 
+                   Margin="20,-10,0,20"/>
+            <ListView x:Name="TemperatureLogListView" Margin="12" >
+                <ListView.ItemTemplate >
+                    <DataTemplate >
+                        <ViewCell >
+                            <StackLayout Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal">
+                                   
+                                    <Label Text="{Binding Nom_terminal}" TextColor="Black" FontSize="16" />
+                                    <Label Text=":" TextColor="Black" FontSize="16"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Date : " FontAttributes="Bold"/>
+                                    <Label Text="{Binding created, StringFormat='{0:yyyy-MM-dd HH:mm}'}" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Margin="330,-50,-120,10">
+                                    <Label Text="{Binding Valeur_temperature}" TextColor="Blue" />
+                                </StackLayout>
+                                <BoxView HeightRequest="1" BackgroundColor="Gray" Margin="0,10"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

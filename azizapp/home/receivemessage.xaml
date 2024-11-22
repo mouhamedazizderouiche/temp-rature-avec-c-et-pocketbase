@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="azizapp.home.receivemessage"
+             NavigationPage.HasBackButton="True"
+             NavigationPage.IconColor="Black"
+            >
+
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="messageListView" HasUnevenRows="True" ItemTapped="messageListView_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <SwipeView >
+                                <SwipeView.RightItems >
+                                    <SwipeItems >
+                                        <SwipeItem
+    Text="Supprimer"
+    BackgroundColor="Red"
+    Clicked="DeleteMessagesBetweenUsers"
+    Command="{Binding Path=BindingContext.DeleteMessageCommand, Source={x:Reference Name=messageListView}}"
+    CommandParameter="{Binding .}" >
+                                            <SwipeItem.IconImageSource >
+                                                <FileImageSource File="supprimer.png" AutomationProperties.IsInAccessibleTree="False"   />
+                                            </SwipeItem.IconImageSource>
+                                        </SwipeItem>
+
+
+
+
+                                    </SwipeItems>
+                                </SwipeView.RightItems>
+                                <Grid Padding="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <!-- Contenu du message -->
+                                    <Frame Grid.Column="1" Padding="5" CornerRadius="10" BackgroundColor="{Binding MessageBackgroundColor}">
+                                        <StackLayout>
+                                            <Image Source="homme.png" WidthRequest="40" HeightRequest="40" HorizontalOptions="Start" Margin="0,10,0,0" />
+                                            <Label Text="{Binding UserName}"  Margin="50,-40,0,0" FontAttributes="Bold" FontSize="17" TextColor="Black" />
+                                            <Label Text="{Binding SentTime,  StringFormat='{0:dd/MM/yyyy HH:mm}'}" FontSize="13" Margin="220,-30,0,30" TextColor="#534e4e" />
+                                            <BoxView Color="#6bfffa" CornerRadius="5" WidthRequest="10" HeightRequest="10"  VerticalOptions="Center" Margin="290,-10,57,0"  IsVisible="{Binding ShowBlueDot}" />
+                                            <Label Text="{Binding Contenu}" FontSize="16" TextColor="{Binding MessageTextColor}" Margin="50,0,0,0" LineBreakMode="WordWrap" />
+                                        </StackLayout>
+                                    </Frame>
+                                </Grid>
+                            </SwipeView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

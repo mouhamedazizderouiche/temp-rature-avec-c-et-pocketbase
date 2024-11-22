@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="azizapp.home.NotificationDetailPage"
+             NavigationPage.IconColor="Black"
+             NavigationPage.HasBackButton="True">
+
+    <ContentPage.Content>
+        <StackLayout Padding="20" Margin="0,20,0,0">
+            <Label Text="Détails de la notification"
+                   FontSize="Title"
+                   HorizontalOptions="Center" 
+                   TextColor="Black"/>
+
+            <ScrollView>
+                <StackLayout Margin="0,30">
+                    <Label Text="Température de referoidissement station :  "
+                           FontSize="17" TextColor="Black" />
+
+                    <Label Text="{Binding NotificationContent}"
+                           LineBreakMode="WordWrap" TextColor="Red" FontSize="17" Margin="20,0" />
+
+                    <Label Text="{Binding NotificationDate, StringFormat='Reçue le: {0:dd/MM/yyyy HH:mm}'}"
+                           FontSize="Small" Margin="20,0" />
+
+                    <!-- Frame for Mark as Read button -->
+                    <Frame x:Name="MarkAsReadButton" BackgroundColor="Black" Margin="150,50,0,50" CornerRadius="10">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="MarkAsReadButton_Clicked" />
+                        </Frame.GestureRecognizers>
+                        <Grid Padding="10" Margin="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Source="coche.png"
+                                   HeightRequest="30"
+                                   WidthRequest="30"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Center" />
+                            <Label Text="Marquer comme lue"
+                                   TextColor="Red"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Start"
+                                   Grid.Column="1"
+                                   Margin="10,0,0,0"/>
+                        </Grid>
+                    </Frame>
+
+                    <!-- Frame for Reply button -->
+                    <Frame x:Name="ReplyButton" BackgroundColor="Black" CornerRadius="10" Margin="0,-150,210,0">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ReplyButton_Clicked" />
+                        </Frame.GestureRecognizers>
+                        <Grid Padding="10" HorizontalOptions="Center" VerticalOptions="Center">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Source="replay.png"
+                                   HeightRequest="20"
+                                   WidthRequest="20"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Center" />
+                            <Label Text="Reply"
+                                   TextColor="White"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Start"
+                                   Grid.Column="1"
+                                   Margin="10,0,0,0"/>
+                        </Grid>
+                    </Frame>
+
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

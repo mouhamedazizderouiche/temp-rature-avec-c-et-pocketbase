@@ -1,0 +1,57 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="azizapp.modif" NavigationPage.HasBackButton="True" 
+             NavigationPage.IconColor="Black"
+             BackgroundColor="White">
+
+    <ContentPage.Content>
+
+        <StackLayout Padding="20">
+
+            <!-- Nom utilisateur -->
+            <Label Text="Nom utilisateur:" TextColor="Black" FontSize="20" FontAttributes="Bold" />
+            <Entry x:Name="UsernameEntry" Placeholder="Entrez votre nom d'utilisateur" />
+
+            <!-- Mot de passe -->
+            <Label Text="Mot de passe: " TextColor="Black" FontSize="20" FontAttributes="Bold" />
+            <Entry x:Name="PasswordEntry" Placeholder="Entrez votre mot de passe" IsPassword="True" TextChanged="PasswordEntry_TextChanged" />
+
+            <!-- Confirmer mot de passe -->
+            <Label  Text="Confirmez le mot de passe:" TextColor="Black" FontSize="20" FontAttributes="Bold" x:Name="ConfirmPasswordLabel" IsVisible="True" />
+            <Entry x:Name="ConfirmPasswordEntry" Placeholder="Confirmez votre mot de passe" IsPassword="True" IsVisible="True" />
+
+            <Label Text="Selectionner le poste:" TextColor="Black" FontSize="20" FontAttributes="Bold" />
+            <Picker x:Name="PostPicker" Title="Sélectionner le poste">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Relount</x:String>
+                        <x:String>Laboratoire</x:String>
+                        <x:String>Maintenance</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <!-- Email -->
+            <Label Text="Email:" TextColor="Black" FontSize="20" FontAttributes="Bold" />
+            <Entry x:Name="EmailEntry" Placeholder="Entrez votre email" />
+
+            <!-- Bouton de modification -->
+            <Button Text="Modifier" Clicked="ModifButton_Clicked" BackgroundColor="Black"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HorizontalOptions="Center"
+                    WidthRequest="150" Margin="0,50,0,0" />
+        </StackLayout>
+    </ContentPage.Content>
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+
+            <!-- Titre -->
+            <Label Text="Modifier utilisateur" 
+                   TextColor="Black"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+</ContentPage>

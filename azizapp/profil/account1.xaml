@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="azizapp.profil.account1"
+             NavigationPage.IconColor="Black"
+             NavigationPage.HasNavigationBar="True"
+             
+               
+             >
+
+
+    <StackLayout Grid.Row="1" Padding="20"    
+           >
+
+        <StackLayout  BackgroundColor="Black" Margin="10,20,30,0" >
+            <ImageButton Source="edition.png" WidthRequest="30" HeightRequest="30" HorizontalOptions="Start"  Clicked="ModifierProfil_Clicked" BackgroundColor="Black" Margin="50,10,10,0 "  />
+            <Label Text="Modifier le profil"
+            TextColor="White"
+                   FontSize="17"
+            HorizontalOptions="FillAndExpand"
+            Margin="113,-30,30,15" />
+        </StackLayout>
+
+        <StackLayout  BackgroundColor="Black" Margin="10,20,30,0" >
+            <ImageButton Source="information.png" Clicked="Informations_Clicked" WidthRequest="30" HeightRequest="30" HorizontalOptions="Start"  BackgroundColor="Black" Margin="50,10,10,0 "  />
+
+            <Label Text="Informations"
+            BackgroundColor="Black"
+            TextColor="White"
+            HorizontalOptions="FillAndExpand"
+            Margin="113,-30,30,15" />
+        </StackLayout>
+        
+        <StackLayout  BackgroundColor="Black" Margin="10,20,30,0" >
+            <ImageButton Source="deconnecter.png" Clicked="Deconnexion_Clicked" WidthRequest="30" HeightRequest="30" HorizontalOptions="Start"  BackgroundColor="Black" Margin="50,10,10,0 "  />
+
+            <Label Text="Déconnexion"
+            BackgroundColor="Black"
+            TextColor="White"
+            HorizontalOptions="FillAndExpand"
+            Margin="113,-30,30,15"/>
+
+
+        </StackLayout>
+
+    </StackLayout>
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+
+            <Label Text="Compte" 
+           TextColor="Black"
+           FontSize="22"
+           FontAttributes="Bold"
+           VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+</ContentPage>

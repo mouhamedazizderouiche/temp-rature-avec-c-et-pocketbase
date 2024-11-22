@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="azizapp.message.ComposeMessagePage" 
+             Title="Compose Message"
+             NavigationPage.IconColor="Black"
+             NavigationPage.HasBackButton="True">
+
+    <ContentPage.Content>
+        <StackLayout Margin="10">
+            <Label Text="To: " TextColor="Black" FontSize="18" FontAttributes="Bold" />
+            <Label x:Name="selectedUserLabel"  Margin="30,10" FontSize="20" TextColor="Black"/>
+            <Editor x:Name="messageEditor" Placeholder="Taper votre message....." Margin="0,20" />
+            <Button Text="Send" Clicked="SendButtonClicked"
+                    Margin="100,100" 
+                    BackgroundColor="Black" 
+                    TextColor="White"
+                    Padding="10"
+                    CornerRadius="10"/>
+        </StackLayout>
+    </ContentPage.Content>
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Envoyer Message"
+               TextColor="Black"
+               FontSize="20"
+               FontAttributes="Bold"
+               VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+</ContentPage>

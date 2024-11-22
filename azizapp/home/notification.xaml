@@ -1,0 +1,57 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:azizapp.home"
+             x:Class="azizapp.home.notification"
+             NavigationPage.IconColor="Black">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout RotationX="0" RotationY="0">
+            <CollectionView x:Name="notificationListView" SelectionMode="None" Margin="5,25,0,0">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        
+                            <Grid Padding="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="Température de station:" FontAttributes="Bold" FontSize="17" TextColor="Black" Grid.Column="0" />
+                                <Label Text="{Binding Content}" FontAttributes="Bold" FontSize="17" TextColor="Black" Grid.Column="1" />
+                                <BoxView Color="Red" CornerRadius="5" WidthRequest="10" HeightRequest="10" VerticalOptions="Center" HorizontalOptions="End" IsVisible="{Binding IsUnread}" Grid.Column="2" Margin="10,0,0,0" />
+                                <Label Text="{Binding Date, StringFormat='Updated: {0:dd/MM/yyyy HH:mm}'}" FontSize="13" TextColor="#534e4e" Grid.Column="0" Grid.ColumnSpan="3" Margin="0,30,0,0" />
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnNotificationTapped" />
+                                </Grid.GestureRecognizers>
+                            </Grid>
+                        
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Label Text="Aucune notification pour ce moment."
+                   FontSize="18"
+                   TextColor="Gray"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="CenterAndExpand"
+                   Margin="0,-1250,0,150"
+                   IsVisible="{Binding ShowNoNotificationMessage}" />
+        </StackLayout>
+    </ContentPage.Content>
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Notification"
+                   TextColor="Black"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+</ContentPage>
